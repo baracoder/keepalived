@@ -1,5 +1,6 @@
 FROM debian:stable
 MAINTAINER Andreas Krüger
 
-RUN apt-get update
-RUN apt-get install -y keepalived
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update -qq
+RUN apt-get install -yqq keepalived
