@@ -21,4 +21,4 @@ perl -p -i -e "s/\{\{ password \}\}/$password/" $PATH_KEEPALIVED_CONF
 modprobe ip_vs
 
 # Foreground keepalived
-/usr/sbin/keepalived -f /etc/keepalived/keepalived.conf --dont-fork --log-console
+keepalived -f /etc/keepalived/keepalived.conf --dont-fork --log-console

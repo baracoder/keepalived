@@ -5,7 +5,7 @@ RUN apk add keepalived --update-cache --repository \
    http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
 
 RUN apk add --update \
-    kmod net-tools \
+    kmod net-tools perl \
     && rm -rf /var/cache/apk/*
 
 COPY run.sh /run.sh
