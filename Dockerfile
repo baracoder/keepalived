@@ -1,8 +1,11 @@
 FROM alpine:3.3
 MAINTAINER Herman Fries
 
+RUN apk add keepalived --update-cache --repository \
+   http://dl-3.alpinelinux.org/alpine/edge/testing/ --allow-untrusted
+
 RUN apk add --update \
-    kmod keepalived net-tools \
+    kmod net-tools \
     && rm -rf /var/cache/apk/*
 
 COPY run.sh /run.sh
