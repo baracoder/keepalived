@@ -1,7 +1,9 @@
-FROM debian:jessie
-MAINTAINER Andreas Krüger
-ENV DEBIAN_FRONTEND noninteractive
-RUN apt-get update -qq && apt-get install --no-install-recommends --no-install-suggests -qqy keepalived && rm -rf /var/lib/apt/lists/*
+FROM alpine:3.3
+MAINTAINER Herman Fries
+
+RUN apk add --update \
+    kmod keepalived net-tools \
+    && rm -rf /var/cache/apk/*
 
 COPY run.sh /run.sh
 COPY keepalived.conf /etc/keepalived/keepalived.conf
